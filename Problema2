@@ -1,0 +1,15 @@
+package Problemas;
+
+public class Problema1 {
+	public static void main(String[] args) {
+		double []a = {1,4,6,1,11,4,4,5};
+		a = ManejadorArreglos.eliminaRepetido(a, 8);
+		imprimeArreglos(a,8);
+	}
+	public static void imprimeArreglos(double[] arr,int n) {
+		for(int i=0;i<n;i++) {
+			System.out.print(arr[i] + "\s");
+			System.out.println();
+		}
+	}
+}
