@@ -1,0 +1,44 @@
+package Problemas;
+
+import java.util.ArrayList;
+
+public class ManejadorArreglos {
+	public static  double[] eliminaRepetido(double[] arr,int n) {
+		for(int i=0;i<n;i++) {
+			for(int j=i+1;j<n;j++) {
+				if(arr[i]==arr[j]) {
+					arr = recorreIzquierda(arr, n, j);
+					j--;
+					n--;
+				}
+			}
+		}
+		return arr;
+	}
+	
+	public static double[] recorreIzquierda(double []arr, int n, int pos) {
+		for(int i=pos;i<n-1;i++) {
+			arr[i]=arr[i+1];
+		}
+		arr[n-1]=0;
+		return arr;
+	}
+	
+	public static int[] Clientes(ArrayList<Integer> arr) {
+		int arreglo[] = {0,0,0,0,0};
+		for(int i=0;i<arr.size();i++) {
+			int cliente = arr.get(i)-1;
+			arreglo[cliente]++;
+		}
+		return arreglo;
+	}
+	public static ArrayList<Integer> generaLista(int[] arr, int n){
+		ArrayList<Integer> array = new ArrayList<>();
+		for(int i=0;i<n;i+=2) {
+			if(arr[i]%2==0) {
+				array.add(arr[i]);
+			}
+		}
+		return array;
+	}
+}
